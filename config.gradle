@@ -8,13 +8,18 @@ ext {
     isShowModuleMe = true
 
     android = [
-            applicationId           : "com.nbfox.faith",        //应用ID
+
             compileSdkVersion       : 27,
             minSdkVersion           : 19,
             targetSdkVersion        : 25,
             versionCode             : 1,
             versionName             : "1.0.0",
             androidSupportSdkVersion: "27.1.1",
+    ]
+    applicationId = [
+            app  : "com.nbfox.faith",
+            component_home: "com.nbfox.component_home",
+            component_me: "com.nbfox.component_me"
     ]
 
     dependencies = [

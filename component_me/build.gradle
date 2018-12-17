@@ -8,7 +8,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
         if (!Boolean.valueOf(rootProject.ext.isShowModuleMe)) {
-            applicationId "com.nbfox.component_me"
+            applicationId rootProject.ext.applicationId.component_me
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion

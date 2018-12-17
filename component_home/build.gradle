@@ -8,7 +8,7 @@ android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
         if (!Boolean.valueOf(rootProject.ext.isShowModuleHome)) {
-            applicationId "com.nbfox.component_home"
+            applicationId rootProject.ext.applicationId.component_home
         }
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
@@ -44,6 +44,9 @@ android {
                 }
             }
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
     }
 }
 
