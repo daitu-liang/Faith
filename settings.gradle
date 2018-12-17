@@ -1,1 +1,1 @@
-include ':app', ':component_base'
+include ':app', ':component_base', ':component_home', ':component_me'

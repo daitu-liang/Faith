@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".HomeActivity">
 
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-      />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="home"
+        android:gravity="center"
+        android:layout_margin="200dp"
+        android:background="@color/design_fab_stroke_top_inner_color"/>
 
     <Button
         android:id="@+id/button"
@@ -19,19 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="83dp"
-
-
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="139dp"
         android:text="home" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/button"
-        android:layout_marginBottom="200dp"
-        android:text="me" />
-
 </RelativeLayout>

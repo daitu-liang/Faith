@@ -3,21 +3,23 @@
  */
 
 ext {
+    // 需要Sysn才会生效
+    isShowModuleHome = true
+    isShowModuleMe = true
 
-    isModule = false
     android = [
             applicationId           : "com.nbfox.faith",        //应用ID
             compileSdkVersion       : 27,
-            buildToolsVersion       : "27.0.2",
             minSdkVersion           : 19,
             targetSdkVersion        : 25,
             versionCode             : 1,
             versionName             : "1.0.0",
-            androidSupportSdkVersion: "27.0.2",
+            androidSupportSdkVersion: "27.1.1",
     ]
 
     dependencies = [
             "appcompat-v7"           : "com.android.support:appcompat-v7:${android["androidSupportSdkVersion"]}",
+            "constraint_layout"      : "com.android.support.constraint:constraint-layout:1.1.3",
             "design"                 : "com.android.support:design:${android["androidSupportSdkVersion"]}",
             "cardview-v7"            : "com.android.support:cardview-v7:${android["androidSupportSdkVersion"]}",
             "annotations"            : "com.android.support:support-annotations:${android["androidSupportSdkVersion"]}",
@@ -33,7 +35,8 @@ ext {
             "rxjava"                 : "io.reactivex.rxjava2:rxjava:2.1.0",
 
             "butterknife"            : "com.jakewharton:butterknife:8.4.0",
-            "butterknife-apt"        : "com.jakewharton:butterknife-compiler:8.4.0",
+            "butterknife-compiler"   : "com.jakewharton:butterknife-compiler:8.5.1",
+
 
             "arouter-api"            : 'com.alibaba:arouter-api:1.4.1',
             "arouter-compiler"       : 'com.alibaba:arouter-compiler:1.2.2',
