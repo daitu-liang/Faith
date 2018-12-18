@@ -3,7 +3,7 @@
     package="com.nbfox.component_me">
 
     <application>
-        <activity android:name=".MeActivity"></activity>
+        <activity android:name="com.nbfox.component_me.ui.MeActivity"/>
     </application>
 
 </manifest>

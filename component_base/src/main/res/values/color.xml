@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <!--背景颜色-->
+    <color name="bg_top">#FFFFFF</color>
+    <color name="bg_white">#FFFFFF</color>
+
+
+    <color name="transpant">#00000000</color>
+
+
+    <color name="bg_main_gray">#f3f3f3</color>
+
+    <color name="bg_main_white">#FFFFFF</color>
+    <color name="bg_press_white">#f9f7f7</color>
+    <color name="line">#EEEEEE</color>
+
+    <color name="line_gray">#EEEEEE</color>
+
+
+    <color name="btn_gray_press">#bfbfc2</color>
+    <color name="btn_gray_normal">#eeeeef</color>
+
+
+
+    <color name="tab_select_color">#008CFF</color>
+    <color name="blue_dark_color">#0681e6</color>
+    <!--文本颜色-->
+    <color name="text_red">#FA2C29</color>
+    <color name="text_gray">#A7A7A7</color>
+    <color name="text_black">#333333</color>
+
+    <color name="text_item">#555555</color>
+    <color name="text_gray6">#666666</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_blue">#008CFF</color>
+
+
+
+
+
+
+</resources>
