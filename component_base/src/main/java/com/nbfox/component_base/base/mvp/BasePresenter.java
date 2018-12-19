@@ -10,6 +10,7 @@ public abstract class BasePresenter<V extends IBaseView> {
 
     private V mProxyView;
     private WeakReference<V> weakReference;
+    private V mViewContext;
 
     /**
      * 绑定View
@@ -20,8 +21,12 @@ public abstract class BasePresenter<V extends IBaseView> {
                 view.getClass().getClassLoader(),
                 view.getClass().getInterfaces(),
                 new MvpViewHandler(weakReference.get()));
+        this.mViewContext=view;
     }
-
+    protected V getViewContext() {
+        return mViewContext;
+    }
+    
     /**
      * 解绑View
      */

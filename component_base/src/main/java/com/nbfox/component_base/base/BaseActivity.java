@@ -1,6 +1,5 @@
 package com.nbfox.component_base.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -11,18 +10,16 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.nbfox.component_base.R;
+import com.nbfox.component_base.utils.ScreenManager;
 
 
 public abstract class BaseActivity extends AppCompatActivity {
 
     private ViewStub emptyView;
-    protected Context mContext;
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = this;
+        ScreenManager.getScreenManager().pushActivity(this, true);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         if (isNeedActionBar()) {
             setContentView(R.layout.activity_base);
@@ -43,7 +40,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
         //将Activity从管理器移除
-//        BaseApplication.getApplication().getActivityManage().removeActivity(this);
+        ScreenManager.getScreenManager().popActivity(this);
+
     }
 
     @Override
