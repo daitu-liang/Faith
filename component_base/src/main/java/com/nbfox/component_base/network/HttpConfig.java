@@ -32,7 +32,7 @@ public class HttpConfig {
 
     //    //------------测试环境------------
     //测试环境-主模块
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "https://wx.palmnest.com/";
 
 
 

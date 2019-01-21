@@ -11,15 +11,21 @@ import com.nbfox.component_base.utils.ToastUtils;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.inject.Inject;
+
 public class UserInfoPresent extends BasePresenter<UserInfoContract.View> implements UserInfoContract.Presenter {
 
+    @Inject
+    public  UserInfoPresent(){
+
+    }
     @Override
     public void sendUserInfo(String name) {
         if (isViewAttached()) {
 
 //            getView().getUserInfo();
 
-            getViewContext().getUserInfo();
+//            getViewContext().getUserInfo();
 
 
             Map<String, String> paramsmap = new LinkedHashMap<>();

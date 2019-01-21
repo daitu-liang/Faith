@@ -6,7 +6,7 @@ import android.content.Context;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.nbfox.component_base.constants.ARouterConfig;
 
-public class BaseApplicattion extends Application{
+public class BaseApplicattion extends Application {
     public    static Context baseApplicattion;
 
     @Override
@@ -30,4 +30,6 @@ public class BaseApplicattion extends Application{
         }
         ARouter.init(this);
     }
+
+
 }

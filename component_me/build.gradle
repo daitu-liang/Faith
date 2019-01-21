@@ -53,6 +53,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':component_base')
 
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
+
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }

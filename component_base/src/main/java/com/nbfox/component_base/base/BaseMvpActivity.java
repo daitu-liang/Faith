@@ -15,6 +15,7 @@ public abstract class BaseMvpActivity<P extends BasePresenter> extends BaseActiv
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //创建present
+
         mPresenter = createPresenter();
         if (mPresenter != null) {
             mPresenter.attachView(this);

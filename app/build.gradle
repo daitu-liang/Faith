@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -37,6 +36,5 @@ dependencies {
     if (Boolean.valueOf(rootProject.ext.isShowModuleMe)) {
         implementation project(':component_me')
     }
-
 
 }

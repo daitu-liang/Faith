@@ -17,10 +17,13 @@ import com.nbfox.component_base.utils.proxy.InterfaceTop;
 import com.nbfox.component_base.utils.proxy.ProxObject;
 import com.nbfox.component_base.utils.proxy.RealObject;
 import com.nbfox.component_me.R;
+import com.nbfox.component_me.mvp.user.DaggerUserComponent;
 import com.nbfox.component_me.mvp.user.UserInfoContract;
 import com.nbfox.component_me.mvp.user.UserInfoPresent;
 
 import java.lang.reflect.Proxy;
+
+import javax.inject.Inject;
 
 @Route(path = ARouterConfig.AROUTER_ME_MAIN)
 public class MeActivity extends BaseMvpActivity<UserInfoPresent> implements UserInfoContract.View {
@@ -30,13 +33,24 @@ public class MeActivity extends BaseMvpActivity<UserInfoPresent> implements User
     @Autowired
     int key2;
 
+
+    @Inject
+    UserInfoPresent userInfoPresent;
+
     @Override
     protected int getLayoutId() {
         return R.layout.me_activity;
     }
 
+    @Inject
+    TestDrag testDrag;
+
     @Override
     protected void initView() {
+       //使用组件进行构造，注入
+        DaggerMainActivityComponent.builder().build().inject(this);
+        testDrag.tost();
+        DaggerUserComponent.create().inject(this);
         ARouter.getInstance().inject(this);
         TextView tv = (TextView) findViewById(R.id.textView);
         tv.setText("值=" + key1 + " - " + key2 + "\n" +
@@ -45,14 +59,16 @@ public class MeActivity extends BaseMvpActivity<UserInfoPresent> implements User
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mPresenter.sendUserInfo("ppppp");
+                if (userInfoPresent != null) {
+                    userInfoPresent.sendUserInfo("ppppp");
+                }
             }
         });
     }
 
     @Override
     protected UserInfoPresent createPresenter() {
-        return new UserInfoPresent();
+        return userInfoPresent;
     }
 
 
@@ -67,12 +83,11 @@ public class MeActivity extends BaseMvpActivity<UserInfoPresent> implements User
 //        realObject.getNameById("自己调用realObject-getNameById");
 
 
-
         Log.i(BaseConfig.BASE_TAG, "--2-->ProxObject--------");
-        ProxObject proxObject=new ProxObject(realObject);
+        ProxObject proxObject = new ProxObject(realObject);
         proxObject.getMyName();
         String tipPro = proxObject.getNameById("代理调用realObject中getNameById方法");
-        Log.i(BaseConfig.BASE_TAG, "---ProxObject->tipPro"+tipPro);
+        Log.i(BaseConfig.BASE_TAG, "---ProxObject->tipPro" + tipPro);
 
         Log.i(BaseConfig.BASE_TAG, "--2-->动态代理--------");
         InterfaceTop mproxy = (InterfaceTop) Proxy.newProxyInstance(
