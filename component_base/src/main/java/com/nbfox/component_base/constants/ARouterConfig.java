@@ -15,4 +15,9 @@ public class ARouterConfig {
      * 我的
      */
     public static final String AROUTER_ME_MAIN = "/me/MeActivity";
+
+    /**
+     * demo
+     */
+    public static final String AROUTER_ME_DEMO = "/me/MeDemoHomeActivity";
 }

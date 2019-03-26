@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button, R.id.button2})
+
+    @OnClick({R.id.button, R.id.button2, R.id.button3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
@@ -34,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
 //                startActivity(MeActivity.getIntent(this));
                 break;
+            case R.id.button3:
+                ARouter.getInstance().build(ARouterConfig.AROUTER_ME_DEMO)
+                        .navigation();
         }
     }
 }

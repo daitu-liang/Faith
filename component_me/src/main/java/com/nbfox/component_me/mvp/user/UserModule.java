@@ -1,6 +1,6 @@
 package com.nbfox.component_me.mvp.user;
 
-import com.nbfox.component_me.mvp.Apple;
+import com.nbfox.component_me.mvp.ResposneResult;
 
 import dagger.Module;
 import dagger.Provides;
@@ -9,7 +9,7 @@ import dagger.Provides;
 public class UserModule {
 
     @Provides
-    Apple provideApple() {
-        return new Apple();
+    ResposneResult provideApple() {
+        return new ResposneResult();
     }
 }

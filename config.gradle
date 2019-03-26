@@ -4,8 +4,8 @@
 
 ext {
     // 需要Sysn才会生效
-    isShowModuleHome = false
-    isShowModuleMe = false
+    isShowModuleHome = true
+    isShowModuleMe = true
 
     android = [
 

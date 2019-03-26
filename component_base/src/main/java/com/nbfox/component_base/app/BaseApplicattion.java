@@ -14,6 +14,7 @@ public class BaseApplicattion extends Application {
         super.onCreate();
         setContext(this);
         initARouterSDK();
+
     }
     private static void setContext(Context mContext) {
         baseApplicattion = mContext;

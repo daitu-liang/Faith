@@ -24,6 +24,7 @@ import okhttp3.ConnectionPool;
 
 
 public class HttpConfig {
+
     //是否开始日志
     public static final boolean DEBUG = true;
 
@@ -122,7 +123,12 @@ public class HttpConfig {
                             @Override
                             public T apply(@NonNull HttpResult<T> tHttpResult) {
                                 if (tHttpResult.getCode() == 200) {
-                                    return tHttpResult.getData();
+                                    if(tHttpResult.getData()!=null){
+                                        return tHttpResult.getData();
+                                    }else{
+                                        return (T)new Object();//data=null  避免出现The mapper function returned a null value.
+
+                                    }
 
                                 } else {
                                     throw new ApiException(tHttpResult.getCode(), tHttpResult.getMsg());
