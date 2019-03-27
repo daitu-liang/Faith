@@ -19,4 +19,14 @@ public class ResposneResult {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+
+
+    @Override
+    public String toString() {
+        return "ResposneResult{" +
+                "code=" + code +
+                ", msg='" + msg + '\'' +
+                '}';
+    }
 }

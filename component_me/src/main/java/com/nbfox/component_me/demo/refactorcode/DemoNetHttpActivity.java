@@ -7,8 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.nbfox.component_base.network.HttpConfig;
 import com.nbfox.component_base.utils.Logger;
 import com.nbfox.component_me.R;
+import com.nbfox.component_me.demo.bus.RxBus;
 import com.nbfox.component_me.mvp.ResposneResult;
 
 import java.util.LinkedHashMap;
@@ -18,7 +20,7 @@ import java.util.Map;
 public class DemoNetHttpActivity extends AppCompatActivity {
 
 
-    String url = "https://wx.palmnest.com/super_service/api/user/login";
+    String url = HttpConfig.BASE_URL+ "/super_service/api/user/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,12 @@ public class DemoNetHttpActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
+
+                ResposneResult result=new ResposneResult();
+                result.setCode(3888);
+                result.setMsg("kakaxi");
+                RxBus.getInstance().post(result);
+
                 Map<String, Object> map = new LinkedHashMap<>();
                 map.put("userName", "liang1");
                 map.put("password", "123456");
