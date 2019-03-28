@@ -3,13 +3,13 @@
     package="com.nbfox.component_me">
 
     <application>
+        <activity android:name=".demo.refactorcode.DemoBusActivity"></activity>
         <activity
             android:name=".demo.refactorcode.DemoNetHttpActivity"
             android:label="@string/title_activity_demo_net_http"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.MeActivity" />
-
-        <activity android:name=".demo.MeDemoHomeActivity"/>
+        <activity android:name=".demo.MeDemoHomeActivity" />
     </application>
 
 </manifest>

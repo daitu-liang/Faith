@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".demo.refactorcode.DemoBusActivity">
 
     <TextView
 
@@ -15,23 +15,8 @@
         android:textSize="16sp"/>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:text="支付多种网络框架切换封装" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="事件总线 LiveDataBus" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="学习内容测试" />
-
+        android:text="bus" />
 </LinearLayout>

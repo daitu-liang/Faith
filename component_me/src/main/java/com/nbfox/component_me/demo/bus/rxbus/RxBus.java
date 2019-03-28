@@ -1,4 +1,4 @@
-package com.nbfox.component_me.demo.bus;
+package com.nbfox.component_me.demo.bus.rxbus;
 
 
 import io.reactivex.Observable;
