@@ -17,7 +17,10 @@ import com.nbfox.component_me.demo.bus.viewmodel.LiveDataTimeViewModel;
 
 public class DemoBusActivity extends AppCompatActivity {
 
+
     private TextView tv;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

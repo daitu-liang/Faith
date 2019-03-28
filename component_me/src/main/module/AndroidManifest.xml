@@ -21,6 +21,9 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity android:name=".demo.refactorcode.DemoBusActivity"/>
+        <activity android:name=".demo.bus.eventbus.SecondActivity"/>
+        <activity android:name=".demo.bus.eventbus.MainActivity"/>
+        <activity android:name=".demo.bus.eventbus.ThreeActivity"/>
 
     </application>
 
