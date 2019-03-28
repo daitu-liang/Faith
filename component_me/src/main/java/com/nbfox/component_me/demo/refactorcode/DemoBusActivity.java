@@ -1,6 +1,5 @@
 package com.nbfox.component_me.demo.refactorcode;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -48,8 +47,9 @@ public class DemoBusActivity extends AppCompatActivity {
     }
 
     private void viewModeTime() {
-        LiveDataTimeViewModel vm = ViewModelProviders.of(this).get(LiveDataTimeViewModel.class);
-        vm.getmTime().observe(this, new android.arch.lifecycle.Observer<String>() {
+      //  LiveDataTimeViewModel vm = ViewModelProviders.of(this).get(LiveDataTimeViewModel.class);
+        LiveDataTimeViewModel vm=new LiveDataTimeViewModel();
+        vm.getmTime().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 tv.setText(s);

@@ -1,21 +1,21 @@
 package com.nbfox.component_me.demo.bus.viewmodel;
 
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
+
+import com.nbfox.component_me.demo.bus.livedatabus.LiveData;
 
 import java.util.Timer;
 import java.util.TimerTask;
-
-public class LiveDataTimeViewModel extends ViewModel {
+//extends ViewModel
+public class LiveDataTimeViewModel {
     private String data;
-    private MutableLiveData<String> mTime = new MutableLiveData<>();
+    private LiveData<String> mTime = new LiveData<>();
     static int index = 0;
 
-    public MutableLiveData<String> getmTime() {
+    public LiveData<String> getmTime() {
         return mTime;
     }
 
-    public void setmTime(MutableLiveData<String> mTime) {
+    public void setmTime(LiveData<String> mTime) {
         this.mTime = mTime;
     }
 
