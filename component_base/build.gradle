@@ -64,6 +64,7 @@ dependencies {
     //各module需再次引入
     api rootProject.ext.dependencies["dagger-android"]
     api rootProject.ext.dependencies["dagger-android-support"]
+    api rootProject.ext.dependencies["fastjson-android"]
     annotationProcessor rootProject.ext.dependencies["dagger-android-processor"]
 
 }
