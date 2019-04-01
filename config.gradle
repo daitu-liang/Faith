@@ -34,7 +34,7 @@ ext {
             "retrofit-converter-gson" : "com.squareup.retrofit2:converter-gson:2.2.0",
             "retrofit-adapter-rxjava" : "com.squareup.retrofit2:adapter-rxjava2:2.3.0",
 
-            "okhttp3"                 : "com.squareup.okhttp3:okhttp:3.2.0",
+            "okhttp3"                 : "com.squareup.okhttp3:okhttp:3.14.0",
             "gson"                    : "com.google.code.gson:gson:2.6.2",
             "rxandroid"               : "io.reactivex.rxjava2:rxandroid:2.1.0",
             "rxjava"                  : "io.reactivex.rxjava2:rxjava:2.2.4",

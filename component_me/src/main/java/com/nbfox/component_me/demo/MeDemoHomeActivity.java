@@ -13,8 +13,14 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.nbfox.component_base.constants.ARouterConfig;
 import com.nbfox.component_me.R;
-import com.nbfox.component_me.demo.bus.rxbus.RxBus;
 import com.nbfox.component_me.demo.bus.livedatabus.LiveDataBus;
+import com.nbfox.component_me.demo.bus.rxbus.RxBus;
+import com.nbfox.component_me.demo.design_mode.chain_mode.FaceFilter;
+import com.nbfox.component_me.demo.design_mode.chain_mode.FilterChain;
+import com.nbfox.component_me.demo.design_mode.chain_mode.HTMLFilter;
+import com.nbfox.component_me.demo.design_mode.chain_mode.Request;
+import com.nbfox.component_me.demo.design_mode.chain_mode.Response;
+import com.nbfox.component_me.demo.design_mode.chain_mode.SensitiveFilter;
 import com.nbfox.component_me.demo.refactorcode.DemoBusActivity;
 import com.nbfox.component_me.demo.refactorcode.DemoNetHttpActivity;
 import com.nbfox.component_me.mvp.ResposneResult;
@@ -39,6 +45,7 @@ public class MeDemoHomeActivity extends AppCompatActivity {
         tv = (TextView) findViewById(R.id.tv);
         Button btn1 = (Button) findViewById(R.id.button);
         Button btn2 = (Button) findViewById(R.id.button2);
+        Button btn3 = (Button) findViewById(R.id.button3);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +57,12 @@ public class MeDemoHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MeDemoHomeActivity.this, DemoBusActivity.class));
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doTestDesginMode_chain();
             }
         });
         //RxBus实现 消息总线
@@ -92,6 +105,39 @@ public class MeDemoHomeActivity extends AppCompatActivity {
                 });
 
 
+
+    }
+
+    private void doTestDesginMode_chain() {
+        //设定过滤规则，对msg字符串进行过滤处理
+        String msg = ":):,<script>,敏感,被就业,网络授课";
+        //过滤请求
+        Request request=new Request();
+        //set方法，将待处理字符串传递进去
+        request.setRequest(msg);
+        //处理过程结束，给出的响应
+        Response response=new Response();
+        //设置响应信息
+        response.setResponse("response:");
+        //FilterChain,过滤规则形成的拦截链条
+        FilterChain fc=new FilterChain();
+        //规则链条添加过滤规则，采用的是链式调用
+        fc.addFilter(new HTMLFilter())
+                .addFilter(new SensitiveFilter())
+                .addFilter(new FaceFilter());
+        //按照FilterChain的规则顺序，依次应用过滤规则
+        fc.doFilter(request, response,fc);
+        //打印请求信息
+        Log.i("nbfox", "onChanged=" +request.getRequest());
+
+        //打印响应信息
+        Log.i("nbfox", "onChanged=" +response.getResponse());
+
+        /*
+         * 处理器对数据进行处理
+         * --|----|---数据--|-----|---
+         * 规则1      规则2                 规则3       规则4
+         */
     }
 
 

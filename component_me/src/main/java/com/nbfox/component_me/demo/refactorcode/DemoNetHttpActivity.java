@@ -15,8 +15,15 @@ import com.nbfox.component_me.demo.net.HttpClient;
 import com.nbfox.component_me.demo.net.IJsonDataListener;
 import com.nbfox.component_me.mvp.ResposneResult;
 
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 public class DemoNetHttpActivity extends AppCompatActivity {
@@ -65,7 +72,31 @@ public class DemoNetHttpActivity extends AppCompatActivity {
 
             }
         });
+        OkHttpClient ok1 = new OkHttpClient.Builder().build();
+        OkHttpClient ok = new OkHttpClient().newBuilder().build();
+
+        Request request=new Request.Builder().url("").build();
+
+        Call res = ok.newCall(request);
+        try {
+            res.execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        res.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+
+            }
+        });
     }
+
 
     private void doBus() {
 
