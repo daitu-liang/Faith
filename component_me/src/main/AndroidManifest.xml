@@ -3,7 +3,8 @@
     package="com.nbfox.component_me">
 
     <application>
-        <activity android:name=".demo.refactorcode.DemoBusActivity"></activity>
+        <activity android:name=".demo.ioc_annotation.IOCActivity"></activity>
+        <activity android:name=".demo.refactorcode.DemoBusActivity" />
         <activity
             android:name=".demo.refactorcode.DemoNetHttpActivity"
             android:label="@string/title_activity_demo_net_http"

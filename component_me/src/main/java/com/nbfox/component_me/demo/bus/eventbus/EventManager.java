@@ -76,7 +76,9 @@ public class EventManager {
                 }
             }
         }
+
     }
+
 
     public void post(Object eventType){
         Class<?> clazz= eventType.getClass();

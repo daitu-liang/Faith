@@ -11,9 +11,15 @@ public abstract class HttpCallBack<Result> implements ICallBack {
     @Override
     public void onSuccess(String response) {
         Gson gson = new Gson();
-        Class<?> clz = analysisClassInfo(this);
-        Result result = (Result) gson.fromJson(response, clz);
-        onSuccess(result);
+
+ /*       HttpResult baseResult =gson.fromJson(response, HttpResult.class);
+        if(baseResult.getCode()==200){
+
+            Class<?> clz = analysisClassInfo(this);
+            Result result = (Result) gson.fromJson(response, clz);
+            onSuccess(result);
+        }*/
+
     }
 
     protected Class<?> analysisClassInfo(Object object) {
