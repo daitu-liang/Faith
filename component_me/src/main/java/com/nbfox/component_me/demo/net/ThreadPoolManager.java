@@ -97,10 +97,8 @@ public class ThreadPoolManager {
                         mThreadPoolExecutor.execute(ht);
                         ht.setRetryCount(ht.getRetryCount()+1);
                         Logger.getLogger("ThreadPoolManager").i("delayThread", "重试机制=" + ht.getRetryCount()+"  时间="+ht.getDelayTime());
-
                     }else{
                         Logger.getLogger("ThreadPoolManager").i("delayThread", "重试机制 3次执行后 结束=" + ht.getRetryCount());
-
                     }
 
                 } catch (InterruptedException e) {

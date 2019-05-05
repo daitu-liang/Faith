@@ -44,7 +44,6 @@ public class JsonHttpRequest implements IhttpRequest {
             httpURLConnection.setDoOutput(true);
             httpURLConnection.setDoInput(true);
 
-
             httpURLConnection.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             httpURLConnection.connect();
 

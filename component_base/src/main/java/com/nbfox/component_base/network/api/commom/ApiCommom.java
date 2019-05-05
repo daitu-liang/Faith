@@ -22,4 +22,9 @@ public interface ApiCommom {
     @FormUrlEncoded
     @POST(NetApi.USER_LOGIN)
     Observable<ResponseBody> getLogin1(@FieldMap Map<String, String> map);
+
+    @FormUrlEncoded
+    @POST(NetApi.USER_LOGIN)
+    Observable<ResponseBody> getLoginTest(@FieldMap Map<String, Object> map);
+
 }
