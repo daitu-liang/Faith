@@ -4,13 +4,11 @@ apply plugin: 'com.android.library'
 android {
 
     compileSdkVersion rootProject.ext.android.compileSdkVersion
-
     defaultConfig {
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         //Arouter路由配置
@@ -33,6 +31,7 @@ android {
             dirs project(':component_base').file('libs')
         }
     }
+
 }
 
 dependencies {
@@ -56,6 +55,7 @@ dependencies {
     api rootProject.ext.dependencies["okhttp3"]
     api rootProject.ext.dependencies["gson"]
     api rootProject.ext.dependencies["glide"]
+
     api rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
     //注解器需在各module需再次引入
@@ -71,7 +71,7 @@ dependencies {
 
 //
 
-group 'com.nbfox.component_base'
+/*group 'com.nbfox.component_base'
 version '1.0.0'
 
 
@@ -144,7 +144,7 @@ install {
         }
     }
 }
-/*
+*//*
 //指定编译的编码
 tasks.withType(Javadoc){
     options.encoding = "UTF-8"

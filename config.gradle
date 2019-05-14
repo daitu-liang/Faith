@@ -18,7 +18,9 @@ ext {
     applicationId = [
             app           : "com.nbfox.faith",
             component_home: "com.nbfox.component_home",
-            component_me  : "com.nbfox.component_me"
+            component_me  : "com.nbfox.component_me",
+
+            app_test  : "com.nbfox.component_me_test"
     ]
 
     dependencies = [

@@ -8,7 +8,11 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        flavorDimensions "versionCode"
+
         //Arouter路由配置
+
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -16,9 +20,30 @@ android {
             }
         }
     }
+
     buildTypes {
-        release {
+        //测试
+        debug {
+            buildConfigField "boolean", "IS_DEBUG", "true"
+            //混淆
             minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        //正式
+        release {
+            buildConfigField "boolean", "IS_DEBUG", "false"
+            //混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,18 +53,37 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    productFlavors {
+        ceshi {//配置测试版包名和应用名
+            applicationId rootProject.ext.applicationId.app_test
+            manifestPlaceholders = [APP_NAME: "@string/app_name_test"]
+            buildConfigField("String","HOST_URL","\"https://ceshi/\"")
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+        shengchan {//配置生产版包名和应用名
+            applicationId rootProject.ext.applicationId.app
+            manifestPlaceholders = [APP_NAME: "@string/app_name_release"]
+            buildConfigField("String","HOST_URL","\"https://shengchan.cn/\"")
+            buildConfigField "boolean", "IS_DEBUG", "false"
+        }
+        useuat {//配置生产版包名和应用名
+            applicationId rootProject.ext.applicationId.app
+            manifestPlaceholders = [APP_NAME: "@string/app_name_uat"]
+            buildConfigField("String","HOST_URL","\"https://uat.cn/\"")
+            buildConfigField "boolean", "IS_DEBUG", "true"
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation project(':component_base')
-
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+
     if (Boolean.valueOf(rootProject.ext.isShowModuleHome)) {
         implementation project(':component_home')
     }
     if (Boolean.valueOf(rootProject.ext.isShowModuleMe)) {
         implementation project(':component_me')
     }
-
 }

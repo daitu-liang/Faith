@@ -2,4 +2,10 @@
     <string name="app_name">component_base</string>
     <string name="base_no_data">暂无数据</string>
     <string name="base_error_data">数据有误</string>
+
+
+    <string name="app_name_test">测试环境</string>
+    <string name="app_name_uat">UAT环境</string>
+    <string name="app_name_release">正式环境</string>
+
 </resources>
