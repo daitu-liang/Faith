@@ -5,8 +5,8 @@ import com.nbfox.component_base.module.UserInfo;
 import com.nbfox.component_base.network.ApiSubscriber;
 import com.nbfox.component_base.network.HttpConfig;
 import com.nbfox.component_base.network.RetrofitClient;
-import com.nbfox.component_base.network.api.commom.ApiCommom;
 import com.nbfox.component_base.utils.ToastUtils;
+import com.nbfox.component_me.net.ApiUser;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -34,7 +34,7 @@ public class UserInfoPresent extends BasePresenter<UserInfoContract.View> implem
             paramsmap.put("deviceType", "1");
             paramsmap.put("deviceNo", "");
             RetrofitClient.getInstance()
-                    .builder(ApiCommom.class)
+                    .builder(ApiUser.class)
                     .getLogin(paramsmap)
                     .compose(HttpConfig.<UserInfo>toTransformer())
 

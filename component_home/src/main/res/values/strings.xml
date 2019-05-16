@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">component_home</string>
+    <!--   组件化时资源名冲突该   比如，color，shape，drawable，
+    图片资源，布局资源，或者anim资源等等，都有可能造成资源名称冲突。
+      按不同的模块，统一规范命名， ic_模块名称_xx
+      -->
 </resources>
+

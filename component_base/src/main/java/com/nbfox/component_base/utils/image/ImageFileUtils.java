@@ -1,4 +1,4 @@
-package com.nbfox.component_base.utils;
+package com.nbfox.component_base.utils.image;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -17,9 +17,9 @@ import java.io.IOException;
 
 
 
-public class ImagesUtils {
+public class ImageFileUtils {
 
-    private static final String TAG = ImagesUtils.class.getSimpleName();
+    private static final String TAG = ImageFileUtils.class.getSimpleName();
 
     public static File saveBitmapFile(String srcPath) {
 //        return saveBitmapFile(getimage(srcPath));
@@ -41,7 +41,7 @@ public class ImagesUtils {
         try {
             bos = new BufferedOutputStream(new FileOutputStream(file));
             bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bos);
-            Log.d("ImagesUtils", "###宽：" + bitmap.getWidth() + "   ###高：" + bitmap.getHeight());
+            Log.d("ImageFileUtils", "###宽：" + bitmap.getWidth() + "   ###高：" + bitmap.getHeight());
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -68,7 +68,7 @@ public class ImagesUtils {
         }
         ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
         Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
-        Log.d("ImagesUtils", "质量压缩后的宽：" + bitmap.getWidth() + "   质量压缩后的高：" + bitmap.getHeight());
+        Log.d("ImageFileUtils", "质量压缩后的宽：" + bitmap.getWidth() + "   质量压缩后的高：" + bitmap.getHeight());
         return bitmap;
     }
 
@@ -97,7 +97,7 @@ public class ImagesUtils {
         //重新读入图片，注意此时已经把options.inJustDecodeBounds 设回false了
         bitmap = BitmapFactory.decodeFile(srcPath, newOpts);
 
-//        Log.d("ImagesUtils", "缩放后的宽：" + bitmap.getWidth() + "   缩放后的高：" + bitmap.getHeight());
+//        Log.d("ImageFileUtils", "缩放后的宽：" + bitmap.getWidth() + "   缩放后的高：" + bitmap.getHeight());
         return bitmap;
     }
 

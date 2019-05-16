@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.nbfox.component_base.network.ApiSubscriber;
 import com.nbfox.component_base.network.RetrofitClient;
-import com.nbfox.component_base.network.api.commom.ApiCommom;
+import com.nbfox.component_me.net.ApiUser;
 
 import java.io.IOException;
 import java.util.Map;
@@ -21,7 +21,7 @@ public class RetrofitPro implements IHttpProcess {
     public void post(String url, Map<String, Object> params,final ICallBack callBack) {
 
         RetrofitClient.getInstance()
-                .builder(ApiCommom.class)
+                .builder(ApiUser.class)
                 .getLoginTest(params)
                 .subscribe(new ApiSubscriber<ResponseBody>() {
                     @Override

@@ -1,9 +1,8 @@
-package com.nbfox.component_base.network.api.commom;
+package com.nbfox.component_me.net;
 
 
 import com.nbfox.component_base.module.HttpResult;
 import com.nbfox.component_base.module.UserInfo;
-import com.nbfox.component_base.network.api.NetApi;
 
 import java.util.Map;
 
@@ -14,7 +13,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 
-public interface ApiCommom {
+public interface ApiUser {
 
     @FormUrlEncoded
     @POST(NetApi.USER_LOGIN)

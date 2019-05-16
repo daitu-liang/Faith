@@ -1,7 +1,7 @@
 package com.nbfox.component_base.network.uploaddown;
 
 
-import com.nbfox.component_base.utils.ImagesUtils;
+import com.nbfox.component_base.utils.image.ImageFileUtils;
 
 import java.io.File;
 
@@ -16,14 +16,14 @@ import okhttp3.RequestBody;
 
 public class UploadPart {
     public static  MultipartBody.Part getFilePart(String partName, String filePath){
-        File file = ImagesUtils.saveBitmapFile(filePath);//压缩处理
+        File file = ImageFileUtils.saveBitmapFile(filePath);//压缩处理
 //        File file=new File(filePath);
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data;charset=utf-8"), file);
         MultipartBody.Part body = MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
         return body;
     }
     public static  MultipartBody.Part getFilePartNoPrees(String partName, String filePath){
-//        File file = ImagesUtils.saveBitmapFile(filePath);//压缩处理
+//        File file = ImageFileUtils.saveBitmapFile(filePath);//压缩处理
         File file=new File(filePath);
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data;charset=utf-8"), file);
         MultipartBody.Part body = MultipartBody.Part.createFormData(partName, file.getName(), requestFile);
