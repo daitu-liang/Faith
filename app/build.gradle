@@ -22,6 +22,18 @@ android {
     }
 
     buildTypes {
+
+/*        uat{
+            buildConfigField "boolean", "IS_DEBUG", "true"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }*/
+
         //测试
         debug {
             buildConfigField "boolean", "IS_DEBUG", "true"
@@ -31,7 +43,6 @@ android {
             zipAlignEnabled true
             // 移除无用的resource文件
             shrinkResources false
-
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
@@ -58,19 +69,18 @@ android {
             applicationId rootProject.ext.applicationId.app_test
             manifestPlaceholders = [APP_NAME: "@string/app_name_test"]
             buildConfigField("String","HOST_URL","\"https://ceshi/\"")
-            buildConfigField "boolean", "IS_DEBUG", "true"
+
         }
         shengchan {//配置生产版包名和应用名
             applicationId rootProject.ext.applicationId.app
             manifestPlaceholders = [APP_NAME: "@string/app_name_release"]
             buildConfigField("String","HOST_URL","\"https://shengchan.cn/\"")
-            buildConfigField "boolean", "IS_DEBUG", "false"
+
         }
         useuat {//配置生产版包名和应用名
             applicationId rootProject.ext.applicationId.app
             manifestPlaceholders = [APP_NAME: "@string/app_name_uat"]
             buildConfigField("String","HOST_URL","\"https://uat.cn/\"")
-            buildConfigField "boolean", "IS_DEBUG", "true"
         }
     }
 }

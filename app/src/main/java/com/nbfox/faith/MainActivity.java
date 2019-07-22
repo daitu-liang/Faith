@@ -1,6 +1,7 @@
 package com.nbfox.faith;
 
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         tvDes.setText(BuildConfig.HOST_URL);
     }
 
@@ -32,15 +32,21 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.button:
-                ARouter.getInstance().build(ARouterConfig.AROUTER_HOME_MAIN).navigation();
+                ActivityOptionsCompat compat = ActivityOptionsCompat.
+                        makeScaleUpAnimation(view, view.getWidth() / 2, view.getHeight() / 2, 0, 0);
+                ARouter.getInstance()
+                        .build(ARouterConfig.AROUTER_HOME_MAIN)
+                        .withOptionsCompat(compat)
+                        .navigation();
 //                startActivity(HomeActivity.getIntent(this));
                 break;
             case R.id.button2:
-                ARouter.getInstance().build(ARouterConfig.AROUTER_ME_MAIN)
+                ARouter.getInstance()
+                        .build(ARouterConfig.AROUTER_ME_MAIN)
+                        .withTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom)
                         .withString("key1", "apple")
                         .withInt("key2", 100)
                         .navigation();
-
 //                startActivity(MeActivity.getIntent(this));
                 break;
             case R.id.button3:
