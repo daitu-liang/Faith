@@ -15,10 +15,6 @@ import com.nbfox.component_base.R;
 import com.nbfox.component_base.utils.DensityUtil;
 
 
-/**
- * Describe：自定义的ActionBar
- * Created by 吴天强 on 2017/8/22.
- */
 
 public class ActionBar extends RelativeLayout {
 
