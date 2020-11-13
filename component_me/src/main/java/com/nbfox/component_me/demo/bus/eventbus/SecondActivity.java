@@ -37,7 +37,6 @@ public class SecondActivity extends AppCompatActivity {
 //                EventBus.getDefault().post(new ToastEvent("我是个1"));
 
                 EventBusUtils.sendEvent(new ToastEvent("kakkxi"));
-
                 int  num=66;
                 String numStr="66";
 

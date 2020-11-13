@@ -71,7 +71,7 @@ android {
             buildConfigField("String","HOST_URL","\"https://ceshi/\"")
 
         }
-        shengchan {//配置生产版包名和应用名
+        shengchan {//配置生产版包名和应用名f
             applicationId rootProject.ext.applicationId.app
             manifestPlaceholders = [APP_NAME: "@string/app_name_release"]
             buildConfigField("String","HOST_URL","\"https://shengchan.cn/\"")
@@ -82,6 +82,16 @@ android {
             manifestPlaceholders = [APP_NAME: "@string/app_name_uat"]
             buildConfigField("String","HOST_URL","\"https://uat.cn/\"")
         }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+
+        targetCompatibility JavaVersion.VERSION_1_8
+
     }
 }
 

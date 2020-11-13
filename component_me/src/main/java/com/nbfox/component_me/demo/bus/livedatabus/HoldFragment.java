@@ -3,6 +3,8 @@ package com.nbfox.component_me.demo.bus.livedatabus;
 import android.app.Activity;
 import android.app.Fragment;
 
+import java.util.HashMap;
+
 
 /**
  * 手写LiveData  生命周期的绑定 利用fragment 和acitvity的生命周期关联
@@ -13,6 +15,8 @@ public class HoldFragment extends Fragment {
 
     public void setLifecycleListener(LifecycleListener lifecycleListener) {
         this.lifecycleListener = lifecycleListener;
+        HashMap<String,String> k=new HashMap<>();
+
     }
 
     private LifecycleListener lifecycleListener;

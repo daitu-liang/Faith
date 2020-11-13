@@ -58,6 +58,7 @@ dependencies {
 
     api rootProject.ext.dependencies["arouter-api"]
     annotationProcessor rootProject.ext.dependencies["arouter-compiler"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     //注解器需在各module需再次引入
     api rootProject.ext.dependencies["dagger"]
     annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
